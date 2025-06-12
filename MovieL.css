@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(28, 65, 134);
+    color: rgb(74, 226, 163);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.movieContainer{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+#divMovies{
+    padding: 10px;
+    border: 3px solid rgb(0, 248, 41);
+    width: 200px;
+    height: 115px;
+    border-radius: 15px;
+}
+
+button{
+    margin-bottom: 20px;
+    background-color: rgb(212, 195, 33);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    
+}

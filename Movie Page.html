@@ -1,0 +1,35 @@
+<!-- Juan Rodriguez June 11th, 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies List</title>
+    <link rel="stylesheet" href="MovieL.css">
+</head>
+<body>
+    <header>
+            <h1>Movie Page</h1>
+    </header>
+
+    <main>
+        <section class="movieContainer">
+            <h2>Add Movies</h2>
+            <label for="txtMovieName">Enter The Movie Title</label>
+            <input type="text" id="txtMovieName" placeholder="Movie Title" required>
+            <button type="Submit" onclick="addMovie();">Add Movie</button>
+
+            <div>
+                <button onclick="resetList();">Reset List</button>
+            </div>
+
+            <div id="divMovies"></div>
+        </section>
+    </main>
+
+    <!-- Includes and connects the JavaScript file with the HTML Page -->
+    <script src="MovieL.js">
+       
+    </script>
+</body>
+</html>
