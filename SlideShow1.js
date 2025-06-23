@@ -1,9 +1,9 @@
 // This will create an array to hold images
         let arrImages = [
-            "./Pictures/Space1.jpg",
-            "./Pictures/Space2.jpg",
-            "./Pictures/Space 3.jpg",
-            "./Pictures/Space 4.jpg",
+            "Space1.jpg",
+            "Space2.jpg",
+            "Space 3.jpg",
+            "Space 4.jpg",
         ]
 
         // The first image is under 0 index, this is where we first start.
