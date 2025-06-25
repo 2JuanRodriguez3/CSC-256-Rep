@@ -1,0 +1,49 @@
+<!-- Juan Rodriguez, June 24th, 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crossword Puzzle</title>
+  <!-- Links The CSS page to the HTML Page -->
+<link rel="stylesheet" href="CrosswordP.css">
+
+</head>
+<body>
+  <h1>Welcome To The Crossword Puzzle</h1>
+
+  <!-- This is the Table that'll be shown on the page where the letters can be placed. -->
+  <table>
+    <tr>
+      <td><input id="cell-0" maxlength="2"></td>
+      <td><input id="cell-1" maxlength="2"></td>
+      <td><input id="cell-2" maxlength="2"></td>
+    </tr>
+    <tr>
+      <td><input id="cell-3" maxlength="2"></td>
+    </tr>
+    <tr>
+      <td><input id="cell-6" maxlength="2"></td>
+      <td><input id="cell-7" maxlength="2"></td>
+      <td><input id="cell-6" maxlength="2"></td>
+    </tr>
+  </table>
+
+  <!-- This is the buttom that'll allow the user to check their answers -->
+  <button onclick="checkAnswers()">Check Answers</button>
+
+  <!-- These are the clues that'll be shwon on the page -->
+  <div class="clues">
+    <h3>You ONLY Get 3 Clues</h3>
+    <p><strong>Across:</strong></p>
+    <p>1A: A Genre of Music (1)</p>
+    <p>3A: A girl at church (2)</p>
+    <p><strong>Down:</strong></p>
+    <p>1D: Going Fast (3)</p>
+  </div>
+
+  <!-- This is where the Javascript connects with The HTML page. -->
+  <script src="Puzzle Sc.js">
+
+  </script>
+</body>
+</html>
