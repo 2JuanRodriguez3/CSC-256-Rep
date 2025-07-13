@@ -1,40 +1,81 @@
 // Here is where the 64 squares are places on command.
-const board = document.getElementById("chessboard");
+const board = document.getElementById('board');
+const turnDisplay = document.getElementById('turnDisplay');
 
-// These letters will appear on the board itself in the order they're laid here.
-const files = ['A','B','C','D','E','F','G','H'];
+let selectedPiece = null;
+let currentTurn = 'red';
 
-// This is where the loop is created for the rows and columns, it loops from the 8 down to one up.
-for (let row = 8; row >= 1; row--) {
-  for (let col = 0; col < 8; col++) {
-    const square = document.createElement('div');
-    square.classList.add('square');
+function createBoard() {
+  for (let row = 0; row < 8; row++) {
+    for (let col = 0; col < 8; col++) {
+      const square = document.createElement('div');
+      square.classList.add('square');
+      const isDark = (row + col) % 2 !== 0;
+      square.classList.add(isDark ? 'dark' : 'light');
+      square.dataset.row = row;
+      square.dataset.col = col;
 
-    const isWhite = (row + col) % 2 === 0;
-    square.classList.add(isWhite ? 'white' : 'black');
+      // This places the pieces only on dark squares
+      if (isDark) {
+        if (row < 3) addPiece(square, 'black');
+        else if (row > 4) addPiece(square, 'red');
+      }
 
-     // This adds the small letters A through H to the bottom row of the board.
-    if (row === 1) {
-      const fileLabel = document.createElement('div');
-      fileLabel.style.position = 'absolute';
-      fileLabel.style.fontSize = '10px';
-      fileLabel.style.bottom = '2px';
-      fileLabel.style.right = '2px';
-      fileLabel.textContent = files[col];
-      square.appendChild(fileLabel);
+      square.addEventListener('click', () => handleSquareClick(square));
+      board.appendChild(square);
     }
-    // This adds the row numbers 1 through 8 onto the left column.
-    if (col === 0) {
-      const rankLabel = document.createElement('div');
-      rankLabel.style.position = 'absolute';
-      rankLabel.style.fontSize = '10px';
-      rankLabel.style.top = '2px';
-      rankLabel.style.left = '2px';
-      rankLabel.textContent = row;
-      square.appendChild(rankLabel);
-    }
-
-    square.style.position = "relative";
-    board.appendChild(square);
   }
 }
+
+function addPiece(square, color) {
+  const piece = document.createElement('div');
+  piece.classList.add('piece', color);
+  piece.dataset.color = color;
+  piece.addEventListener('click', (e) => handlePieceClick(e, piece));
+  square.appendChild(piece);
+}
+
+function handlePieceClick(e, piece) {
+  e.stopPropagation(); // this will prevent square click
+  if (piece.dataset.color !== currentTurn) return;
+
+  // this will deselect if the same figure is clicked again
+  if (selectedPiece === piece) {
+    piece.classList.remove('selected');
+    selectedPiece = null;
+  } else {
+    clearSelection();
+    selectedPiece = piece;
+    piece.classList.add('selected');
+  }
+}
+
+function handleSquareClick(square) {
+  if (!selectedPiece) return;
+
+  const targetSquare = square;
+  if (targetSquare.classList.contains('dark') && targetSquare.children.length === 0) {
+    targetSquare.appendChild(selectedPiece);
+    selectedPiece.classList.remove('selected');
+    selectedPiece = null;
+    switchTurn();
+  }
+}
+
+// This allows the rule to switch turns for everytime a player moves their circles on the board.
+function switchTurn() {
+  currentTurn = currentTurn === 'red' ? 'black' : 'red';
+  turnDisplay.textContent = currentTurn.charAt(0).toUpperCase() + currentTurn.slice(1);
+}
+
+function clearSelection() {
+  document.querySelectorAll('.piece.selected').forEach(p => p.classList.remove('selected'));
+  selectedPiece = null;
+}
+
+// This creates and renders the board and it's addons.
+createBoard();
+
+
+
+ 
