@@ -1,0 +1,77 @@
+<!-- Juan Rodriguez, August 8th, 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMixer</title>
+
+    <!-- The link to CSS stylesheet -->
+    <link rel="stylesheet" href="MindMixer Stylez.css">
+</head>
+<body>
+    <!-- Top Buttons Section -->
+    <header>
+        <button id="myAccountBtn">My Account</button>
+        <h1>Welcome to MindMixer</h1>
+        <button id="contactBtn">Contact Us</button>
+    </header>
+
+    <!-- This is the Main Section -->
+    <main>
+        <!-- Left Example Image -->
+        <section class="image-section">
+            <p>(Flashcard Example Image)</p>
+            <div class="image-placeholder"></div>
+        </section>
+
+        <!-- Center Functionality Section -->
+        <section class="center-section">
+            <p class="tagline">Mix and Explore Your Mind's Potential</p>
+            <button onclick="showTutorial()">How To Fly Through Your Cards</button>
+            <button onclick="createNewCard()">Create Your Cards</button>
+            <button onclick="startStudy()">Begin Your Studies At Your Own Pace</button>
+
+            <!-- This is tje display area for the cards -->
+            <div id="flashcard-container"></div>
+        </section>
+
+        <!-- Right Example Image -->
+        <section class="image-section">
+            <p>(Flashcard Example Images)</p>
+            <div class="image-placeholder"></div>
+        </section>
+    </main>
+
+      <!-- My Account -->
+    <div id="accountModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('accountModal')">&times;</span>
+            <h2>My Account</h2>
+            <input type="text" id="username" placeholder="Enter Username">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="loginUser()">Login</button>
+            <button onclick="registerUser()">Register</button>
+            <p id="accountMessage"></p>
+        </div>
+    </div>
+
+     <!-- Contact Us -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contactModal')">&times;</span>
+            <h2>Contact Us</h2>
+            <input type="text" id="contactName" placeholder="Your Name">
+            <input type="email" id="contactEmail" placeholder="Your Email">
+            <textarea id="contactMessage" placeholder="Your Message"></textarea>
+            <button onclick="sendContact()">Send</button>
+            <p id="contactResponse"></p>
+        </div>
+    </div>
+
+
+    <!-- The links to the JavaScript files -->
+    <script src="MindMixer Deck.js"></script> <!-- the file that holds the flashcards object and data -->
+    <script src="MindMixer Main.js"></script> <!-- the main file that holds most of the functions -->
+</body>
+</html>

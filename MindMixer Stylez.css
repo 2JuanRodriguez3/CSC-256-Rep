@@ -1,0 +1,110 @@
+/* Juan Rodriguez, August 8th, 2025 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* The main header layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    padding: 20px;
+}
+
+header h1 {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+/* the navigation buttons for contact us and my account */
+header button {
+    background-color: white;
+    border: 2px solid red;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Layout for main content */
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.image-section {
+    text-align: center;
+}
+
+.image-placeholder {
+    background-color: tomato;
+    height: 300px;
+    width: 150px;
+    margin: auto;
+}
+
+/* center section content */
+.center-section {
+    text-align: center;
+    width: 40%;
+}
+
+.center-section button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Flashcard styling */
+#flashcard-container {
+    margin-top: 20px;
+}
+
+.flashcard {
+    background: white;
+    padding: 20px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    width: 80%;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* The Modal Styles for the contact us and my account areas*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+    background: rgb(233, 176, 176);
+    margin: 10% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+.modal-content input, 
+.modal-content textarea {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+}
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
